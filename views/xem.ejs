@@ -1,0 +1,38 @@
+<%include header%>
+   <script type="text/javascript">
+        function xoa(tinnhan){
+            if (window.confirm(tinnhan) == true)
+            {
+                return true;
+            }
+            return false;
+        }
+     </script>
+     <div class="container">
+     <a href="/them" class="btn btn-success">Thêm</a>
+      <table class="table table-striped table-hover table-bordered" width="100%">
+          <thead class="thead-inverse">
+              <tr>
+                  <th>Họ và tên</th>
+                  <th>Tuổi</th>
+                  <th>Action</th>
+              </tr>
+              </thead>
+              <tbody>
+              <% data.forEach(function(motphantu){
+
+              %>
+                  <tr>
+                      <td scope="row"><%= motphantu.ten%></td>
+                      <td><%= motphantu.tuoi%></td>
+                      <td>
+                        <a onclick="return xoa('Bạn có chắc chắn muốn xóa không?');" href="/xoa/<%= motphantu._id%>">Xóa</a>
+                        <a href="/sua/<%= motphantu._id%>">Sửa</a>
+                      </td>
+                  </tr>
+                <%})%>
+              </tbody>
+      </table>
+     </div>
+      <%include footer%>
+   

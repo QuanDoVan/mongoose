@@ -1,0 +1,21 @@
+<%include header%>
+    <div class="container">
+          <%data.forEach(function(motpt){%>
+         <form action="/sua/<%= motpt._id%>" method="post">
+        <div class="form-group">
+          <label for="">Tên</label>
+          <input type="text"
+            class="form-control" name="ten" id="" aria-describedby="helpId" placeholder="" value="<%= motpt.ten%>">
+          <small id="helpId" class="form-text text-muted">Nhập họ và tên</small>
+        </div>
+        <div class="form-group">
+          <label for="">Tuổi</label>
+          <input type="text"
+            class="form-control" name="tuoi" id="" aria-describedby="helpId" placeholder="" value="<%= motpt.tuoi%>">
+          <small id="helpId" class="form-text text-muted">Nhập tuổi</small>
+        </div>
+        <%})%>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    </div>
+   <%include footer%>
